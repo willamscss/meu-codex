@@ -1,0 +1,11 @@
+# Dependências
+/node_modules
+/package-lock.json
+# Arquivos de ambiente
+.env
+# VS Code
+.vscode/
+# Arquivos temporários
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

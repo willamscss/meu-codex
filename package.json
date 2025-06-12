@@ -22,5 +22,10 @@
   "dependencies": {
     "dotenv": "^16.5.0",
     "openai": "^5.1.1"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^7.0.2",
+    "critical": "^7.2.1",
+    "penthouse": "^2.3.3"
   }
 }
