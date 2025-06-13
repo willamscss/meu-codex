@@ -1,0 +1,146 @@
+/* ============================================
+   Cart Recommendations
+   ============================================ */
+
+/* Container principal */
+.cart-recommendations {
+    margin: 3rem auto;
+    padding: 0 1rem;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.cart-recommendations .section-header {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 2rem;
+}
+
+/* Grid desktop */
+#cart-recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+    margin: 0;
+}
+
+/* Card */
+.minimal-card {
+    background: var(--color-background);
+    border-radius: .75rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recommendation-media {
+    width: 100%;
+    padding: .75rem;
+}
+
+.recommendation-media img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: .5rem;
+    max-height: 150px;
+}
+
+.recommendation-info {
+    padding: 1rem;
+    text-align: center;
+}
+
+.recommendation-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 .5rem;
+    color: var(--color-foreground);
+}
+
+.recommendation-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.recommendation-title a:hover {
+    text-decoration: underline;
+}
+
+.recommendation-price {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 .75rem;
+    color: var(--color-foreground);
+}
+
+.add-to-cart-button {
+    padding: .5rem 1rem;
+    font-size: .9rem;
+    background-color: #EC7014;
+    color: #fff;
+    border: none;
+    border-radius: .25rem;
+    cursor: pointer;
+    transition: background-color .2s, transform .2s;
+}
+
+.add-to-cart-button:hover {
+    background-color: #d65c11;
+    transform: translateY(-2px);
+}
+
+/* Loading centralizado */
+#cart-recommendations-grid .cart-recommendations-loading {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Mobile – carrossel e layout */
+@media screen and (max-width: 749px) {
+    /* Grid → carrossel */
+    #cart-recommendations-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 1rem;
+        padding: 1rem 0;
+        scroll-snap-type: x mandatory;
+    }
+
+    /* Cada card ocupa 80% da tela e centraliza */
+    .minimal-card {
+        flex: 0 0 80%;
+        max-width: 80%;
+        scroll-snap-align: center;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 auto;
+        padding: .5rem;
+        height: auto;
+    }
+
+    .recommendation-media {
+        flex: 0 0 40%;
+        padding: 0;
+    }
+
+    .recommendation-media img {
+        width: auto;
+        height: 100px;
+        object-fit: contain;
+        border-radius: .5rem 0 0 .5rem;
+    }
+
+    .recommendation-info {
+        flex: 1;
+        padding: 0 .75rem;
+        text-align: left;
+    }
+
+    .add-to-cart-button {
+        margin-top: .5rem;
+    }
+}
